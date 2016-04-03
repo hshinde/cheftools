@@ -1,0 +1,31 @@
+{
+  "name": "repmgr_master",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "postgresql": {
+      "config": {
+        "data_directory": "/data/main"
+      }
+    },
+    "repmgr": {
+      "master_ip": "MASTERIP",
+      "slave_ip": ["SLAVEIP"],
+      "config": {
+         "cluster": "CLUSTERNAME",
+         "node": NODENUM,
+         "node_name": "NODENAME",
+         "conninfo": "host=MASTERIP user=repmgr_usr dbname=repmgr_db"
+      }
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[repmgr::master]"
+  ],
+  "env_run_lists": {
+
+  }
+}

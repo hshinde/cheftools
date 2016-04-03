@@ -1,0 +1,22 @@
+{
+  "name": "dbserver",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "dbserver": {
+      "aws_access_key": "AWS_ACCESS_KEY",
+      "aws_secret_access_key": "AWS_SECRET_KEY",
+      "vol_size": VOLUME_SIZE,
+      "mount_point": "MOUNT_PATH"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[dbserver]"
+  ],
+  "env_run_lists": {
+
+  }
+}

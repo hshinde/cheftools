@@ -1,0 +1,20 @@
+{
+  "name": "pg_master",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "pg-multi": {
+      "master_ip": "MASTERIP",
+      "slave_ip": ["SLAVEIP"]
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[pg-multi::pg_master]"
+  ],
+  "env_run_lists": {
+
+  }
+}

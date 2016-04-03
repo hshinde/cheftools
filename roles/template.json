@@ -1,0 +1,31 @@
+{
+  "name": "empty",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "app": {
+      "name": "tomatoes",
+      "web_dir": "/var/data/www/apps/tomatoes"
+    },
+    "user":{
+      "name": "vagrant"
+    },
+    "nginx": {
+      "version": "1.2.6",
+      "default_site_enabled": true,
+      "source": {
+        "url": "http://nginx.org/download/nginx-1.2.6.tar.gz",
+        "modules": ["http_gzip_static_module", "http_ssl_module"]
+      }
+    }
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]"
+  ],
+  "env_run_lists": {
+
+  }
+}
