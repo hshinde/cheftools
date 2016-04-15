@@ -69,7 +69,6 @@ system("knife node run_list add #{master['inst_id']} role[dbserver]")
 system("knife node run_list add #{slave['inst_id']}  role[dbserver]")
 system("knife ssh \'name:#{master['inst_id']}\' \'sudo chef-client\' -x ubuntu -i #{ENV['KEYPATH']}")
 system("knife ssh \'name:#{slave['inst_id']}\' \'sudo chef-client\' -x ubuntu -i #{ENV['KEYPATH']}")
-exit
 
 system("knife node run_list add #{master['inst_id']} role[repmgr_master]")
 #system("echo knife ssh \'name:#{master['inst_id']}\' \'sudo chef-client\' -x ubuntu -i #{ENV['KEYPATH']} ")
